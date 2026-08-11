@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mr. Weston's Class Rules</title>
+<title>Mr. Weston's Class Rules | Reglas de la clase del Sr. Weston</title>
 <style>
 :root {
   color-scheme: light;
@@ -24,17 +24,19 @@
 
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   color: var(--ink);
   background: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
 header,
 section,
 footer {
-  padding: 2rem max(1.25rem, calc((100% - 52rem) / 2));
+  padding: 2rem max(1.25rem, calc((100% - 72rem) / 2));
 }
 
 header {
@@ -44,19 +46,53 @@ header {
   padding-bottom: 2.75rem;
 }
 
+.language-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.language-column {
+  min-width: 0;
+}
+
+.language-column + .language-column {
+  border-left: 2px solid rgba(23, 33, 43, 0.22);
+  padding-left: clamp(2rem, 5vw, 4rem);
+}
+
+header .language-column + .language-column,
+footer .language-column + .language-column {
+  border-left-color: rgba(255, 255, 255, 0.38);
+}
+
+.language-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 h1,
 h2 {
   line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+p,
+li {
+  overflow-wrap: anywhere;
 }
 
 h1 {
   margin: 0 0 0.75rem;
-  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 h2 {
   margin: 0 0 1rem;
-  font-size: clamp(1.45rem, 4vw, 2rem);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
 }
 
 p,
@@ -109,191 +145,423 @@ a {
 footer {
   color: #ffffff;
   background: var(--navy);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
-@media (max-width: 36rem) {
+@media (max-width: 50rem) {
   header,
   section,
   footer {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
+
+  .language-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .language-column + .language-column {
+    border-top: 2px solid rgba(23, 33, 43, 0.22);
+    border-left: 0;
+    padding-top: 1.75rem;
+    padding-left: 0;
+  }
+
+  header .language-column + .language-column,
+  footer .language-column + .language-column {
+    border-top-color: rgba(255, 255, 255, 0.38);
+  }
 }
 </style>
 </head>
 <body>
 <header>
-  <h1>Mr. Weston's Class Rules</h1>
-  <p>Welcome! I am <strong>Mr. Weston</strong>.<br>Please do not call me "teacher." I will learn your names soon!</p>
+  <div class="language-grid">
+    <div class="language-column" lang="en">
+      <p class="language-label">English</p>
+      <h1>Mr. Weston's Class Rules</h1>
+      <p>Welcome! I am <strong>Mr. Weston</strong>.<br>Please do not call me "teacher." I will learn your names soon!</p>
+    </div>
+    <div class="language-column" lang="es">
+      <p class="language-label">Español</p>
+      <h1>Reglas de la clase del Sr. Weston</h1>
+      <p>¡Bienvenidos! Soy el <strong>Sr. Weston</strong>.<br>Por favor, no me llamen "maestro". ¡Pronto aprenderé sus nombres!</p>
+    </div>
+  </div>
 </header>
 
 <main>
   <section class="blue">
-    <h2>The #1 Rule: The Joy of Quiet</h2>
-    <p>From the moment you walk in until you leave, <strong>be quiet</strong>.</p>
-    <p><strong>What does quiet mean?</strong></p>
-    <ul>
-      <li>Talk in a whisper</li>
-      <li>Don't talk while I'm talking</li>
-      <li>That's it!</li>
-    </ul>
-    <p><strong>When can you talk louder?</strong></p>
-    <ul>
-      <li>While asking a question</li>
-      <li>While answering a question</li>
-    </ul>
-    <p><strong>How to Get My Attention:</strong></p>
-    <ul>
-      <li>Raise your hand silently</li>
-      <li>Do not say my name or "Teacher"</li>
-      <li>Wait for me to call on you</li>
-    </ul>
-    <p><strong>What happens if it's too loud?</strong></p>
-    <p><strong>For the whole class:</strong></p>
-    <ul>
-      <li>I will give ONE warning</li>
-      <li>After that, the rest of class will be silent</li>
-    </ul>
-    <p><strong>For YOU:</strong></p>
-    <ul>
-      <li>If you cause problems, you may be sent to the tables with NO warning</li>
-      <li>You will sit alone and be silent</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>The #1 Rule: The Joy of Quiet</h2>
+        <p>From the moment you walk in until you leave, <strong>be quiet</strong>.</p>
+        <p><strong>What does quiet mean?</strong></p>
+        <ul>
+          <li>Talk in a whisper</li>
+          <li>Don't talk while I'm talking</li>
+          <li>That's it!</li>
+        </ul>
+        <p><strong>When can you talk louder?</strong></p>
+        <ul>
+          <li>While asking a question</li>
+          <li>While answering a question</li>
+        </ul>
+        <p><strong>How to Get My Attention:</strong></p>
+        <ul>
+          <li>Raise your hand silently</li>
+          <li>Do not say my name or "Teacher"</li>
+          <li>Wait for me to call on you</li>
+        </ul>
+        <p><strong>What happens if it's too loud?</strong></p>
+        <p><strong>For the whole class:</strong></p>
+        <ul>
+          <li>I will give ONE warning</li>
+          <li>After that, the rest of class will be silent</li>
+        </ul>
+        <p><strong>For YOU:</strong></p>
+        <ul>
+          <li>If you cause problems, you may be sent to the tables with NO warning</li>
+          <li>You will sit alone and be silent</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>La regla número 1: La alegría de la tranquilidad</h2>
+        <p>Desde el momento en que entras hasta que sales, <strong>mantén la voz baja</strong>.</p>
+        <p><strong>¿Qué significa mantener la voz baja?</strong></p>
+        <ul>
+          <li>Habla en un susurro</li>
+          <li>No hables mientras yo esté hablando</li>
+          <li>¡Eso es todo!</li>
+        </ul>
+        <p><strong>¿Cuándo puedes hablar más fuerte?</strong></p>
+        <ul>
+          <li>Mientras haces una pregunta</li>
+          <li>Mientras respondes una pregunta</li>
+        </ul>
+        <p><strong>Cómo llamar mi atención:</strong></p>
+        <ul>
+          <li>Levanta la mano en silencio</li>
+          <li>No digas mi nombre ni "Maestro"</li>
+          <li>Espera a que te dé la palabra</li>
+        </ul>
+        <p><strong>¿Qué pasa si hay demasiado ruido?</strong></p>
+        <p><strong>Para toda la clase:</strong></p>
+        <ul>
+          <li>Daré UNA advertencia</li>
+          <li>Después, el resto de la clase estará en silencio</li>
+        </ul>
+        <p><strong>Para TI:</strong></p>
+        <ul>
+          <li>Si causas problemas, podrías ir a las mesas SIN advertencia</li>
+          <li>Te sentarás solo y permanecerás en silencio</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="gold">
-    <h2>How to Enter the Room</h2>
-    <ol>
-      <li>Walk in quietly</li>
-      <li>Sit down</li>
-      <li>Read the Board for Directions.*</li>
-      <li>Get Started.</li>
-    </ol>
-    <p class="note">*If nothing is on the board, sit down and wait quietly.</p>
-    <p><strong>Before the bell rings:</strong> If you need water or the bathroom, just go.</p>
-    <p><strong>After the bell rings:</strong> If you are late, you will be marked tardy.</p>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>How to Enter the Room</h2>
+        <ol>
+          <li>Walk in quietly</li>
+          <li>Sit down</li>
+          <li>Read the Board for Directions.*</li>
+          <li>Get Started.</li>
+        </ol>
+        <p class="note">*If nothing is on the board, sit down and wait quietly.</p>
+        <p><strong>Before the bell rings:</strong> If you need water or the bathroom, just go.</p>
+        <p><strong>After the bell rings:</strong> If you are late, you will be marked tardy.</p>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Cómo entrar al salón</h2>
+        <ol>
+          <li>Entra caminando sin hacer ruido</li>
+          <li>Siéntate</li>
+          <li>Lee las instrucciones en la pizarra.*</li>
+          <li>Comienza.</li>
+        </ol>
+        <p class="note">*Si no hay nada en la pizarra, siéntate y espera en silencio.</p>
+        <p><strong>Antes de que suene la campana:</strong> Si necesitas tomar agua o ir al baño, ve.</p>
+        <p><strong>Después de que suene la campana:</strong> Si llegas tarde, se te marcará una tardanza.</p>
+      </div>
+    </div>
   </section>
 
   <section class="mint">
-    <h2>Your Seat</h2>
-    <ul>
-      <li>You have an assigned seat</li>
-      <li>Sit in the same seat every day</li>
-      <li>Do not ask to move to be by friends</li>
-      <li>I may change seats later</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Your Seat</h2>
+        <ul>
+          <li>You have an assigned seat</li>
+          <li>Sit in the same seat every day</li>
+          <li>Do not ask to move to be by friends</li>
+          <li>I may change seats later</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Tu asiento</h2>
+        <ul>
+          <li>Tienes un asiento asignado</li>
+          <li>Siéntate en el mismo lugar todos los días</li>
+          <li>No pidas cambiarte para estar cerca de tus amigos</li>
+          <li>Es posible que cambie los asientos más adelante</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="lavender">
-    <h2>Bathroom Rules</h2>
-    <ol>
-      <li>Look at the green/red sign</li>
-      <li>If it's <strong>green</strong>, put two fingers up</li>
-      <li>Wait for me to nod</li>
-      <li>Get your planner and bring it to me</li>
-      <li>I will stamp it (keep your planner with you!)</li>
-      <li>Take the hall pass</li>
-      <li>Flip the sign to <strong>red</strong></li>
-      <li>When you come back: flip to green, put the pass back, sit down</li>
-    </ol>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Bathroom Rules</h2>
+        <ol>
+          <li>Look at the green/red sign</li>
+          <li>If it's <strong>green</strong>, put two fingers up</li>
+          <li>Wait for me to nod</li>
+          <li>Get your planner and bring it to me</li>
+          <li>I will stamp it (keep your planner with you!)</li>
+          <li>Take the hall pass</li>
+          <li>Flip the sign to <strong>red</strong></li>
+          <li>When you come back: flip to green, put the pass back, sit down</li>
+        </ol>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Reglas para ir al baño</h2>
+        <ol>
+          <li>Mira el letrero verde/rojo</li>
+          <li>Si está en <strong>verde</strong>, levanta dos dedos</li>
+          <li>Espera a que yo asienta con la cabeza</li>
+          <li>Trae tu agenda</li>
+          <li>La sellaré (¡lleva tu agenda contigo!)</li>
+          <li>Toma el pase para el pasillo</li>
+          <li>Cambia el letrero a <strong>rojo</strong></li>
+          <li>Cuando regreses: cámbialo a verde, devuelve el pase y siéntate</li>
+        </ol>
+      </div>
+    </div>
   </section>
 
   <section class="peach">
-    <h2>Food and Drinks</h2>
-    <p><strong>YES:</strong> Water with a lid</p>
-    <p><strong>NO:</strong></p>
-    <ul>
-      <li>Food on your desk</li>
-      <li>Snacks from your backpack</li>
-      <li>Soda, cans, or open drinks</li>
-      <li>Anything near the computers</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Food and Drinks</h2>
+        <p><strong>YES:</strong> Water with a lid</p>
+        <p><strong>NO:</strong></p>
+        <ul>
+          <li>Food on your desk</li>
+          <li>Snacks from your backpack</li>
+          <li>Soda, cans, or open drinks</li>
+          <li>Anything near the computers</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Comida y bebidas</h2>
+        <p><strong>SÍ:</strong> Agua con tapa</p>
+        <p><strong>NO:</strong></p>
+        <ul>
+          <li>Comida en tu escritorio</li>
+          <li>Bocadillos de tu mochila</li>
+          <li>Refrescos, latas o bebidas abiertas</li>
+          <li>Nada cerca de las computadoras</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="gray">
-    <h2>Backpacks</h2>
-    <ul>
-      <li>Put them under the table OR on your chair</li>
-      <li>Do NOT put them on the table</li>
-      <li>Do NOT leave them in the aisle</li>
-      <li>Do NOT wear them while sitting</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Backpacks</h2>
+        <ul>
+          <li>Put them under the table OR on your chair</li>
+          <li>Do NOT put them on the table</li>
+          <li>Do NOT leave them in the aisle</li>
+          <li>Do NOT wear them while sitting</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Mochilas</h2>
+        <ul>
+          <li>Colócalas debajo de la mesa O en tu silla</li>
+          <li>NO las pongas sobre la mesa</li>
+          <li>NO las dejes en el pasillo</li>
+          <li>NO las lleves puestas mientras estás sentado</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="blue">
-    <h2>Moving Around</h2>
-    <p>You do NOT need to ask to:</p>
-    <ul>
-      <li>Throw something away</li>
-      <li>Get a tissue</li>
-      <li>Sharpen a pencil</li>
-      <li>Get hand sanitizer</li>
-    </ul>
-    <p><strong>However:</strong></p>
-    <ul>
-      <li>Walk with purpose</li>
-      <li>Do not stop to talk to friends</li>
-      <li>Go and come right back</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Moving Around</h2>
+        <p>You do NOT need to ask to:</p>
+        <ul>
+          <li>Throw something away</li>
+          <li>Get a tissue</li>
+          <li>Sharpen a pencil</li>
+          <li>Get hand sanitizer</li>
+        </ul>
+        <p><strong>However:</strong></p>
+        <ul>
+          <li>Walk with purpose</li>
+          <li>Do not stop to talk to friends</li>
+          <li>Go and come right back</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Moverse por el salón</h2>
+        <p>NO necesitas pedir permiso para:</p>
+        <ul>
+          <li>Tirar algo a la basura</li>
+          <li>Tomar un pañuelo desechable</li>
+          <li>Sacar punta a un lápiz</li>
+          <li>Usar gel desinfectante</li>
+        </ul>
+        <p><strong>Sin embargo:</strong></p>
+        <ul>
+          <li>Ve directamente a lo que necesitas</li>
+          <li>No te detengas a hablar con tus amigos</li>
+          <li>Ve y regresa de inmediato</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="gold">
-    <h2>Headphones</h2>
-    <p>I am waiting for more instructions from administrators. There is currently a no-headphone policy until I receive clarity.</p>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Headphones</h2>
+        <p>I am waiting for more instructions from administrators. There is currently a no-headphone policy until I receive clarity.</p>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Audífonos</h2>
+        <p>Estoy esperando más instrucciones de la administración. Actualmente no se permiten audífonos hasta que reciba una aclaración.</p>
+      </div>
+    </div>
   </section>
 
   <section class="mint">
-    <h2>Phones</h2>
-    <ul>
-      <li>No phones. Ever.</li>
-      <li>Keep phones out of sight and silent</li>
-      <li>If I see or hear your phone, I will put it in an envelope</li>
-      <li>I will take the envelope to the office</li>
-      <li>A parent or other adult on your contact list must pick it up after school</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Phones</h2>
+        <ul>
+          <li>No phones. Ever.</li>
+          <li>Keep phones out of sight and silent</li>
+          <li>If I see or hear your phone, I will put it in an envelope</li>
+          <li>I will take the envelope to the office</li>
+          <li>A parent or other adult on your contact list must pick it up after school</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Teléfonos celulares</h2>
+        <ul>
+          <li>No se permiten teléfonos. Nunca.</li>
+          <li>Mantenlos fuera de la vista y en silencio</li>
+          <li>Si veo o escucho tu teléfono, lo pondré en un sobre</li>
+          <li>Llevaré el sobre a la oficina</li>
+          <li>Uno de tus padres u otro adulto que aparezca en tu lista de contactos deberá recogerlo después de clases</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="lavender">
-    <h2>Games and Free Time</h2>
-    <p><a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0273.pdf">Utah HB 273</a> requires classroom technology to have an educational purpose.</p>
-    <ul>
-      <li>You may not play games during free time</li>
-      <li>A game is allowed only when it is part of what we are learning</li>
-      <li>If you finish your work, choose one of the approved class activities</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Games and Free Time</h2>
+        <p><a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0273.pdf">Utah HB 273</a> requires classroom technology to have an educational purpose.</p>
+        <ul>
+          <li>You may not play games during free time</li>
+          <li>A game is allowed only when it is part of what we are learning</li>
+          <li>If you finish your work, choose one of the approved class activities</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Juegos y tiempo libre</h2>
+        <p>La <a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0273.pdf">ley HB 273 de Utah</a> exige que la tecnología del salón tenga un propósito educativo.</p>
+        <ul>
+          <li>No puedes jugar durante el tiempo libre</li>
+          <li>Un juego solo está permitido cuando forma parte de lo que estamos aprendiendo</li>
+          <li>Si terminas tu trabajo, elige una de las actividades aprobadas de la clase</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="peach">
-    <h2>End of Class</h2>
-    <p><strong>5-Minute Bell:</strong> Keep working!</p>
-    <p><strong>1 Minute Left:</strong></p>
-    <ul>
-      <li>You can log off</li>
-      <li>You may stand up and stay at your desk</li>
-      <li>Gather your things</li>
-      <li>Stay quiet</li>
-      <li>Clean your station</li>
-      <li>Push in your chair when you leave</li>
-    </ul>
-    <p><strong>Final Bell:</strong> Leave quietly</p>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>End of Class</h2>
+        <p><strong>5-Minute Bell:</strong> Keep working!</p>
+        <p><strong>1 Minute Left:</strong></p>
+        <ul>
+          <li>You can log off</li>
+          <li>You may stand up and stay at your desk</li>
+          <li>Gather your things</li>
+          <li>Stay quiet</li>
+          <li>Clean your station</li>
+          <li>Push in your chair when you leave</li>
+        </ul>
+        <p><strong>Final Bell:</strong> Leave quietly</p>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Fin de la clase</h2>
+        <p><strong>Campana de 5 minutos:</strong> ¡Sigue trabajando!</p>
+        <p><strong>Queda 1 minuto:</strong></p>
+        <ul>
+          <li>Puedes cerrar la sesión</li>
+          <li>Puedes ponerte de pie y permanecer junto a tu escritorio</li>
+          <li>Recoge tus cosas</li>
+          <li>Mantén la voz baja</li>
+          <li>Limpia tu área</li>
+          <li>Empuja tu silla hacia adentro cuando salgas</li>
+        </ul>
+        <p><strong>Campana final:</strong> Sal en silencio</p>
+      </div>
+    </div>
   </section>
 
   <section class="gray">
-    <h2>Respect</h2>
-    <p>I expect: Hard work, Focus, Questions, Curiosity</p>
-    <p><strong>Remember:</strong></p>
-    <ul>
-      <li>Sometimes things are hard. That's okay.</li>
-      <li>If something is easy for you, it might be hard for someone else.</li>
-      <li>Never make fun of anyone for not understanding.</li>
-      <li>Struggling means you are learning! Do not be afraid of that feeling.</li>
-    </ul>
+    <div class="language-grid">
+      <div class="language-column" lang="en">
+        <h2>Respect</h2>
+        <p>I expect: Hard work, Focus, Questions, Curiosity</p>
+        <p><strong>Remember:</strong></p>
+        <ul>
+          <li>Sometimes things are hard. That's okay.</li>
+          <li>If something is easy for you, it might be hard for someone else.</li>
+          <li>Never make fun of anyone for not understanding.</li>
+          <li>Struggling means you are learning! Do not be afraid of that feeling.</li>
+        </ul>
+      </div>
+      <div class="language-column" lang="es">
+        <h2>Respeto</h2>
+        <p>Espero: Trabajo arduo, Concentración, Preguntas, Curiosidad</p>
+        <p><strong>Recuerda:</strong></p>
+        <ul>
+          <li>A veces las cosas son difíciles. No pasa nada.</li>
+          <li>Si algo es fácil para ti, podría ser difícil para otra persona.</li>
+          <li>Nunca te burles de alguien por no entender.</li>
+          <li>¡Tener dificultades significa que estás aprendiendo! No tengas miedo de esa sensación.</li>
+        </ul>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer>
-  <strong>I am here to help you learn! Let's have a great semester.</strong>
+  <div class="language-grid">
+    <div class="language-column" lang="en">
+      <strong>I am here to help you learn! Let's have a great semester.</strong>
+    </div>
+    <div class="language-column" lang="es">
+      <strong>¡Estoy aquí para ayudarte a aprender! Tengamos un excelente semestre.</strong>
+    </div>
+  </div>
 </footer>
 </body>
 </html>
